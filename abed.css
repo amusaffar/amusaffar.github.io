@@ -3,12 +3,55 @@
 }
 
 dl {
-    margin-left: 2em;
+	margin-left: 0;
+	padding-left: 2em;
+	color: #222222;
 }
 
 dl a {
 	color: #021b6d;
 }
-dl {
-	color: #222222;
+
+.venue {
+	font-style: italic;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Keep every page the same readable width (the home page's 46em).
+   border-box counts list indents inside that width, not on top of it. */
+#layout-content p,
+#layout-content ul,
+#layout-content dl {
+	max-width: 46em;
+	box-sizing: border-box;
+}
+
+/* Phones: stack the menu above the content. */
+@media (max-width: 700px) {
+	#tlayout, #tlayout > tbody, #tlayout > tbody > tr,
+	#layout-menu, #layout-content,
+	table.imgtable, table.imgtable tbody, table.imgtable tr, table.imgtable td {
+		display: block;
+		width: auto;
+	}
+	#layout-menu {
+		padding-bottom: 0.5em;
+	}
+	#layout-menu .menu-item {
+		display: inline-block;
+	}
+	#layout-content {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	dl {
+		padding-left: 0;
+	}
+	dd {
+		margin-left: 1.25em;
+	}
 }
